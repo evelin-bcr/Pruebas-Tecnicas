@@ -8,6 +8,7 @@ import cors from "cors";
 import { conexionMongo } from "./src/config/db.js";
 import { empleadosRouter } from "./src/routes/empleados.routes.js";
 import { departamentosRouter } from "./src/routes/departamentos.routes.js";
+import { empleadosDepartamentosRouter } from "./src/routes/empleados-deptos.routes.js";
 
 
 // 2. Configurar las dependencias necesarias
@@ -25,6 +26,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/empleados", empleadosRouter);
 app.use("/departamentos", departamentosRouter);
+app.use("/empleados-deptos", empleadosDepartamentosRouter);
 
 
 

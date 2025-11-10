@@ -1,0 +1,30 @@
+<div class="contenedor">
+    <h1>Departamentos y Empleados</h1>
+    
+    <div class="fila">
+      <div class="columna" *ngFor="let dept of departamentos">
+        <div class="tarjeta">
+          <div class="tarjeta-encabezado">
+            <h5>
+              <i class="fas fa-building"></i> 
+              {{ dept.nombre }}
+            </h5>
+            <small>Código: {{ dept.codigo }}</small>
+          </div>
+          <div class="tarjeta-cuerpo">
+            <h6>
+              <i class="fas fa-users"></i>
+              <strong>Empleados ({{ dept.empleados?.length || 0 }})</strong>
+            </h6>
+            <ul>
+              <li *ngFor="let emp of dept.empleados">
+                <i class="fas fa-user"></i>
+                <strong>{{ emp.nombre }} {{ emp.apellido1 }}</strong><br>
+                <small>Código: {{ emp.codigo }}</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

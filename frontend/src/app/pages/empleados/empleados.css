@@ -1,0 +1,225 @@
+.contenedor {
+  max-width: 1100px;
+  margin: 50px auto;
+  background: white;
+  padding: 20px 40px; 
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: var(--fuente-texto);
+  font-weight: bold;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: var(--tamaño-titulos);
+  color: var(--color-titulos);
+  font-weight: 600; 
+}
+
+.boton-primario {
+  background-color: var(--color-buttons-hover) !important;
+  border: none !important;
+  color: white !important;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--fuente-texto);
+  transition: transform 0.4s ease;
+  font-weight: bold;
+}
+
+.boton-primario:hover {
+  transform: scale(1.05)!important;
+}
+
+
+.boton-agregar {
+  position: absolute;
+  right: 25px;             
+  top: 25px; 
+}
+
+
+.boton-eliminar {
+  padding: 10px 15px;
+}
+
+
+.tabla-contenedor {
+  max-width: 1100px;
+  margin: 0 auto 30px auto;
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-weight: 400; 
+
+
+}
+
+.tabla thead th {
+  padding: 15px 12px;
+  border-bottom: 2px solid #dee2e6;
+  color: var(--color-titulos);
+  font-weight: 700; 
+  background-color: #f8f9fa;
+}
+
+
+.tabla tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #e9ecef;
+  color: var(--color-textos);
+}
+
+
+.tabla-striped tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.tabla-striped tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.tabla-striped tbody tr:hover {
+  background-color: #e6eeff;
+  transition: background-color 0.2s ease;
+}
+
+
+.boton-editar {
+  background-color: var(--color-buttons-secundario);
+  border: none;
+  color: var(--color-titulos);
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 15px;
+  font-weight: 600;
+  transition: transform 0.4s ease;
+}
+
+.boton-editar:hover {
+  transform: scale(1.05);
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.modal-contenido h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--color-titulos);
+}
+
+.campo {
+  margin-bottom: 15px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--color-textos);
+  font-weight: 600;
+}
+
+.campo input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: var(--fuente-texto);
+  color: var(--color-textos);
+  box-sizing: border-box;
+}
+
+.campo select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: var(--fuente-texto);
+  color: var(--color-textos);
+  box-sizing: border-box;
+  background-color: white;
+}
+
+
+.botones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.boton-cancelar {
+  background-color: #6c757d;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.boton-cancelar:hover {
+  transform: scale(1.05);
+}
+
+
+.boton-guardar {
+  padding: 8px 15px;
+}
+
+
+@media (max-width: 600px) {
+  .contenedor, .tabla-contenedor {
+    padding: 15px;
+    margin: 20px 10px;
+  }
+
+  .tabla th,
+  .tabla td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .modal-contenido {
+    width: 90%;
+  }
+  
+  .boton-agregar {
+    position: static;
+    display: block;
+    margin: 10px auto;
+  }
+}

@@ -5,11 +5,6 @@ export const postEmpleado = async (request, response) => {
   try {
     const { codigo, nombre, apellido1, apellido2, codigo_departamento } = request.body;
 
-    // // const departamentoExiste = await Departamentos.findById(codigo_departamento);
-    // if (!departamentoExiste) {
-    //   return res.status(404).json({ mensaje: "El departamento no existe" });
-    // }
-
     await Empleados.create({
       codigo,
       nombre,
@@ -34,8 +29,7 @@ export const postEmpleado = async (request, response) => {
 // Mostrar todos los empleados - GET
 export const getAllEmpleados = async (request, response) => {
   try {
-  
-    const allEmpleados = await Empleados.find().populate("codigo_departamento");
+    const allEmpleados = await Empleados.find().populate("codigo_departamento", "codigo nombre");
 
     return response.status(200).json({
       mensaje: "Empleados obtenidos correctamente",

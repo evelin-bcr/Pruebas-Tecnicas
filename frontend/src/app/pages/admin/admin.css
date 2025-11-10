@@ -1,0 +1,115 @@
+.contenedor {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: var(--fuente-texto);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: var(--tamaño-titulos);
+    color: var(--color-titulos);
+    font-weight: 600;
+  }
+  
+  .fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .columna {
+    flex: 0 0 calc(50% - 10px);
+  }
+  
+  .tarjeta {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+ 
+  .tarjeta-encabezado {
+    background-color: #6a9cfd;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .tarjeta-encabezado h5 {
+    margin: 0 0 5px 0;
+    font-weight: 600;
+    color: white;
+
+  }
+  
+  .tarjeta-encabezado small {
+    font-size: 0.85rem;
+    font-weight: 600; 
+  }
+  
+  .tarjeta-cuerpo {
+    padding: 20px;
+  }
+  
+  .tarjeta-cuerpo h6 {
+    color: var(--color-titulos);
+    margin-bottom: 15px;
+  }
+  
+  .tarjeta-cuerpo ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--fuente-texto);
+  }
+  
+  .tarjeta-cuerpo li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+    color: var(--fuente-texto);
+    font-weight: 300; 
+  }
+  
+  .tarjeta-cuerpo li small {
+    font-weight: 400; 
+  }
+  .tarjeta-cuerpo li:last-child {
+    border-bottom: none;
+  }
+
+  .fas {
+    margin-right: 8px;
+    color: #033495;
+  }
+  
+  .fa-users {
+    color: var(--color-buttons-secundario);
+  }
+  
+  .fa-user {
+    color: var(--color-buttons-secundario);
+    font-size: 0.9em;
+  }
+  
+  @media (max-width: 768px) {
+    .columna {
+      flex: 0 0 100%;
+    }
+    
+    .contenedor {
+      padding: 15px;
+      margin: 20px 10px;
+    }
+  }

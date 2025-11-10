@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+:root {
+  --fuente-texto: 'Quicksand', sans-serif;
+  --tamaño-titulos: 30px;
+  --color-titulos: #033495;
+  --color-textos: #0d3a6f;
+  --color-buttons-primario: #6a9cfd;
+  --color-buttons-hover: #033495;
+  --color-buttons-secundario: #ffb8d0;
+  --gradiente-azul-vertical: linear-gradient(180deg, #6a9cfd 0%, #aee4ff 100%);
+  --navbar-height: 70px; 
+
+}
+body {
+  background: var(--gradiente-azul-vertical);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: var(--fuente-texto);
+  overflow-x: hidden;
+  color: var(--color-textos);
+  padding-top: var(--navbar-height);
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-titulos);
+  }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

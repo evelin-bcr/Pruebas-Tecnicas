@@ -1,0 +1,77 @@
+<div class="contenedor">
+    <h1>Empleados</h1>
+    <button class="boton-primario boton-agregar" (click)="abrirModal()">Agregar</button>
+  </div>
+  
+  <div class="tabla-contenedor">
+    <table class="tabla tabla-striped">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Apellido 1</th>
+          <th>Apellido 2</th>
+          <th>Código Depto</th>
+          <th>Departamento</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of empleados">
+          <td>{{ emp.codigo }}</td>
+          <td>{{ emp.nombre }}</td>
+          <td>{{ emp.apellido1 }}</td>
+          <td>{{ emp.apellido2 }}</td>
+          <td>{{ emp.codigo_departamento.codigo || 'N/A' }}</td>
+          <td>{{ emp.codigo_departamento.nombre || 'N/A' }}</td>
+          <td>
+            <button class="boton-editar" (click)="editar(emp)">Editar</button>
+            <button class="boton-primario boton-eliminar" (click)="eliminar(emp._id!)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal" *ngIf="mostrarModal">
+    <div class="modal-contenido">
+      <h3>{{ editando ? 'Editar Empleado' : 'Nuevo Empleado' }}</h3>
+  
+      <form (ngSubmit)="guardar()">
+        <div class="campo">
+          <label>Código</label>
+          <input type="number" [(ngModel)]="empleado.codigo" name="codigo" required>
+        </div>
+      
+        <div class="campo">
+          <label>Nombre</label>
+          <input type="text" [(ngModel)]="empleado.nombre" name="nombre" required>
+        </div>
+      
+        <div class="campo">
+          <label>Apellido 1</label>
+          <input type="text" [(ngModel)]="empleado.apellido1" name="apellido1" required>
+        </div>
+      
+        <div class="campo">
+          <label>Apellido 2</label>
+          <input type="text" [(ngModel)]="empleado.apellido2" name="apellido2">
+        </div>
+      
+        <div class="campo">
+          <label>Departamento</label>
+          <select [(ngModel)]="empleado.codigo_departamento" name="codigo_departamento" required>
+            <option value="">Seleccione un departamento</option>
+            <option *ngFor="let dep of departamentos" [value]="dep._id">
+              {{ dep.nombre }}
+            </option>
+          </select>
+        </div>
+      
+        <div class="botones">
+          <button type="button" class="boton-cancelar" (click)="cerrarModal()">Cancelar</button>
+          <button type="submit" class="boton-primario boton-guardar">Guardar</button>
+        </div>
+      </form>
+      
